@@ -1,0 +1,162 @@
+{
+    "usuarios": [
+      {
+        "id": 1,
+        "nome": "Sofia",
+        "email": "sofia@gt.com",
+        "senha": "123456"
+      },
+      {
+        "id": 2,
+        "nome": "Lucas",
+        "email": "lucas@gt.com",
+        "senha": "qwerty"
+      },
+      {
+        "id": 3,
+        "nome": "Isabela",
+        "email": "isabela@gt.com",
+        "senha": "password"
+      },
+      {
+        "id": 4,
+        "nome": "Gabriel",
+        "email": "gabriel@gt.com",
+        "senha": "abc123"
+      },
+      {
+        "id": 5,
+        "nome": "Ana Paula",
+        "email": "anapaula@gt.com",
+        "senha": "letmein"
+      },
+      {
+        "id": 6,
+        "nome": "Pedro",
+        "email": "pedro@gt.com",
+        "senha": "111111"
+      },
+      {
+        "id": 7,
+        "nome": "Laura",
+        "email": "laura@gt.com",
+        "senha": "12345678"
+      },
+      {
+        "id": 8,
+        "nome": "Mateus",
+        "email": "mateus@gt.com",
+        "senha": "123abc"
+      },
+      {
+        "id": 9,
+        "nome": "Julia",
+        "email": "julia@gt.com",
+        "senha": "welcome"
+      },
+      {
+        "id": 10,
+        "nome": "Diego",
+        "email": "diego@gt.com",
+        "senha": "sunshine"
+      }
+    ],
+    "filmes": [
+      {
+        "id": 1,
+        "nome": "O Exorcista",
+        "valor": "",
+        "imagem": "https://br.web.img2.acsta.net/pictures/23/10/05/21/13/1431520.jpg",
+        "diretor": "William Friedkin",
+        "categoria": "terror"
+      },
+      {
+        "id": 2,
+        "nome": "O Iluminado",
+        "valor": "",
+        "imagem": "https://br.web.img3.acsta.net/c_310_420/pictures/14/10/10/19/21/152595.jpg",
+        "diretor": "Stanley Kubrick",
+        "categoria": "terror"
+      },{
+        "id": 3,
+        "nome": "A Bruxa",
+        "valor": "",
+        "imagem": "https://br.web.img3.acsta.net/pictures/16/02/02/11/51/346769.jpg",
+        "diretor": "Robert Eggers",
+        "categoria": "terror"
+      },{
+        "id": 4,
+        "nome": "Invocação do Mal",
+        "valor": "",
+        "imagem": "https://br.web.img3.acsta.net/c_310_420/pictures/210/166/21016629_2013062820083878.jpg",
+        "diretor": "James Wan",
+        "categoria": "terror"
+      },
+      {
+        "id": 5,
+        "nome": "Titanic" ,
+        "valor": "",
+        "imagem": "https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/89/56/94/20055685.jpg",
+        "diretor": "James Cameron",
+        "categoria": "romance"
+      },
+      {
+        "id": 6,
+        "nome": "Simplesmente Acontece" ,
+        "valor": "",
+        "imagem": "https://br.web.img2.acsta.net/c_310_420/pictures/14/12/11/15/29/051042.jpg",
+        "diretor": "Christian Ditter",
+        "categoria": "romance"
+      },
+      {
+        "id": 7,
+        "nome": "Orgulho e Preconceito",
+        "valor": "",
+        "imagem": "https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/87/84/14/20028635.jpg",
+        "diretor": "Joe Wright",
+        "categoria": "romance"
+      },
+      {
+        "id": 8,
+        "nome": "Diário de uma Paixão",
+        "valor": "",
+        "imagem": "https://br.web.img3.acsta.net/medias/nmedia/18/91/21/92/20135014.jpg",
+        "diretor": "Nick Cassavetes",
+        "categoria": "romance"
+      },
+      {
+        "id": 9,
+        "nome": "Toy Story" ,
+        "valor": "",
+        "imagem": "https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/91/05/36/20127436.jpg",
+        "diretor": "John Lasseter",
+        "categoria": "desenho"
+      },
+      {
+        "id": 10,
+        "nome": "O Rei Leão" ,
+        "valor": "",
+        "imagem": "https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/87/84/28/19962110.jpg",
+        "diretor": "Roger Allers",
+        "categoria": "desenho"
+      },
+      {
+        "id": 11,
+        "nome": "A Viagem de Chihiro" ,
+        "valor": "",
+        "imagem": "https://br.web.img3.acsta.net/c_310_420/pictures/210/527/21052756_20131024195513383.jpg",
+        "diretor": "Hayao Miyazaki",
+        "categoria": "desenho"
+      },
+      {
+        "id": 12,
+        "nome": "Frozen: Uma Aventura Congelante" ,
+        "valor": "",
+        "imagem": "https://br.web.img3.acsta.net/c_310_420/pictures/210/461/21046189_20131002174340886.jpg",
+        "diretor": "Jennifer Lee",
+        "categoria": "desenho"
+      }
+
+    ]
+  }
+  
