@@ -1,0 +1,74 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+}
+.cata{
+    width: 100%;
+}
+.main{
+    width: 350px;
+    height: 500px;
+    background: red;
+    overflow: hidden;
+    background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #afafaf;
+    padding: 15px;
+    text-align: center;
+}
+.login{
+    padding-top: 10%;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"]{
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80%;
+}
+button {
+    background-color: #DA70D6;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    width: 80%;
+    
+    margin-top: 10px;
+}
+.btn{
+    background-color: #DA70D6;
+    color: #fff;
+    border: none;
+}
+
+.btn:hover, button:hover{
+    background-color: #573b8a;
+    color: white;
+}
+.l:hover {
+    color: #573b8a;
+}
+p{padding: 10px;}
+
+.l{
+    text-decoration: none;
+    color: #DA70D6;
+}
+h1{
+    padding-bottom: 10%;
+}
+
+
+  
+  
