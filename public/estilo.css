@@ -35,6 +35,10 @@ input[type="email"]{
     border-radius: 4px;
     width: 80%;
 }
+input[type="number"]{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 button {
     background-color: #DA70D6;
     color: #fff;
