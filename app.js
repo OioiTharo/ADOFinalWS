@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const path = require('path'); 
-const fs = require('fs'); // Módulo para trabalhar com arquivos
+const path = require('path');
+const fs = require('fs');
 const app = express();
 const PORT = 3000;
 
@@ -17,80 +17,63 @@ const loadUserData = () => {
     return JSON.parse(jsonData);
 };
 
-// Função para salvar os dados no arquivo JSON
-const saveUserData = (data) => {
-    const jsonData = JSON.stringify(data, null, 2);
-    fs.writeFileSync(dataFilePath, jsonData, 'utf8');
-};
+// Rota para fornecer os detalhes do filme pelo ID
+app.get('/api/filme/:id', (req, res) => {
+    const { id } = req.params;
+    // Load movie data from JSON file or database
+    const dataFilePath = path.join(__dirname, 'public', 'bd.json');
+    const jsonData = fs.readFileSync(dataFilePath, 'utf8');
+    const movies = JSON.parse(jsonData).filmes;
+    // Find the movie with the requested ID
+    const movie = movies.find(movie => movie.id === parseInt(id));
+    // If movie is found, send it as JSON response, otherwise return 404
+    if (movie) {
+        res.json(movie);
+    } else {
+        res.status(404).json({ error: 'Movie not found' });
+    }
+});
 
 // Rota para servir login.html na raiz
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
-
-// Rota para fornecer os dados dos filmes
-app.get('/api/catalogo', (req, res) => {
-    const dados = loadUserData();
-    console.log('Dados dos filmes carregados:', dados.filmes);
-    res.json(dados.filmes);
-});
-
-// Rota para servir o catalogo.html
-app.get('/catalogo', (req, res) => {
+// Rota para servir catalogo.html
+app.get('/catalogo.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'catalogo.html'));
 });
 
-app.get('/detalhes', (req, res) => {
-    const { id } = req.query; // Captura o parâmetro de consulta 'id'
-    const dados = loadUserData();
-    const filme = dados.filmes.find(f => f.id === parseInt(id));
-    if (!filme) {
-        return res.status(404).send('Filme não encontrado');
-    }
-    // Aqui, você pode renderizar a página de detalhes diretamente ou redirecionar para um arquivo HTML
-    // Vou redirecionar para a página de detalhes.html
-    res.redirect(`/detalhes.html?id=${id}`);
+// Rota para servir detalhes.html
+app.get('/detalhes.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'detalhes.html'));
 });
 
 // Endpoint para login
 app.post('/login', (req, res) => {
-    console.log('Login request received');
-    console.log('Request body:', req.body); // Log para depuração
-
     const { email, senha } = req.body;
-
     if (!email || !senha) {
-        console.log('Email ou senha não fornecidos');
         return res.status(400).send('Email e senha são obrigatórios');
     }
 
     const dados = loadUserData();
     const usuarioExistente = dados.usuarios.find(u => u.email === email && u.senha === senha);
     if (!usuarioExistente) {
-        console.log('Credenciais inválidas');
         return res.status(401).send('Credenciais inválidas');
     }
 
-    console.log('Login bem-sucedido');
     res.redirect('/catalogo.html');
 });
 
 // Endpoint para cadastro
 app.post('/cadastro', (req, res) => {
-    console.log('Cadastro request received');
-    console.log('Request body:', req.body); // Log para depuração
-
     const { nome, email, senha } = req.body;
-
     if (!email || !senha) {
-        console.log('Usuário ou senha não fornecidos');
         return res.status(400).send('Usuário e senha são obrigatórios');
     }
 
     const dados = loadUserData();
     if (dados.usuarios.some(u => u.email === email)) {
-        console.log('Usuário já existe');
         return res.status(400).send('Este usuário já existe');
     }
 
@@ -103,7 +86,6 @@ app.post('/cadastro', (req, res) => {
     dados.usuarios.push(novoUsuario);
     saveUserData(dados);
 
-    console.log('Cadastro bem-sucedido');
     res.redirect('/login.html');
 });
 

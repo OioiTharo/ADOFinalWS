@@ -34,7 +34,7 @@
                                     <p class="card-text">Categoria: ${item.categoria}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">  
-                                            <a href="/detalhes?id=${item.id}" class="btn btn-sm btn-outline-secondary">Ver</a>
+                                            <a href="/api/filme/${item.id}" class="btn btn-sm btn-outline-secondary">Ver</a>
                                             <a href="/carrinho.html?id=${item.id}" class="btn btn-sm btn-outline-secondary">Comprar</a> 
                                         </div>
                                         <large class="text-muted">R$ ${item.valor}</large>
@@ -50,5 +50,6 @@
                 });
         });
     </script>
+    
 </body>
 </html>

@@ -21,7 +21,6 @@
                         <p class="card-text">Diretor: <span id="filme-diretor"></span></p>
                         <p class="card-text">Categoria: <span id="filme-categoria"></span></p>
                         <p class="card-text">Valor: <span id="filme-valor"></span></p>
-                        <p> <input type="number" width="20px" min="1" max="10"> </input></p>
                         <a href="#" class="btn btn-primary">Comprar</a>
                         <a href="/catalogo.html" class="btn btn-secondary">Voltar para o Catálogo</a>
                     </div>
@@ -33,11 +32,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Puxar o ID do filme da URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const filmeId = urlParams.get('id');
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
 
             // Fazer requisição ao servidor para obter os detalhes do filme com base no ID
-            fetch(`/api/filme/${filmeId}`)
+            fetch(`/api/filme/${id}`)
                 .then(response => response.json())
                 .then(filme => {
                     // Preencher os detalhes do filme nos elementos HTML
