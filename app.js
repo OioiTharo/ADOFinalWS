@@ -20,18 +20,22 @@ const loadUserData = () => {
 // Rota para fornecer os detalhes do filme pelo ID
 app.get('/api/filme/:id', (req, res) => {
     const { id } = req.params;
-    // Load movie data from JSON file or database
     const dataFilePath = path.join(__dirname, 'public', 'bd.json');
     const jsonData = fs.readFileSync(dataFilePath, 'utf8');
     const movies = JSON.parse(jsonData).filmes;
-    // Find the movie with the requested ID
     const movie = movies.find(movie => movie.id === parseInt(id));
-    // If movie is found, send it as JSON response, otherwise return 404
     if (movie) {
         res.json(movie);
     } else {
         res.status(404).json({ error: 'Movie not found' });
     }
+});
+
+// Rota para fornecer a lista de filmes
+app.get('/api/catalogo', (req, res) => {
+    const jsonData = fs.readFileSync(dataFilePath, 'utf8');
+    const movies = JSON.parse(jsonData).filmes;
+    res.json(movies);
 });
 
 // Rota para servir login.html na raiz
@@ -42,6 +46,11 @@ app.get('/', (req, res) => {
 // Rota para servir catalogo.html
 app.get('/catalogo.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'catalogo.html'));
+});
+
+// Rota para servir carrinho.html
+app.get('/carrinho.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'carrinho.html'));
 });
 
 // Rota para servir detalhes.html
