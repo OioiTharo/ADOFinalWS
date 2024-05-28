@@ -17,10 +17,15 @@ const loadUserData = () => {
     return JSON.parse(jsonData);
 };
 
+// Função para salvar os dados no arquivo JSON
+const saveUserData = (data) => {
+    const jsonData = JSON.stringify(data, null, 2);
+    fs.writeFileSync(dataFilePath, jsonData, 'utf8');
+};
+
 // Rota para fornecer os detalhes do filme pelo ID
 app.get('/api/filme/:id', (req, res) => {
     const { id } = req.params;
-    const dataFilePath = path.join(__dirname, 'public', 'bd.json');
     const jsonData = fs.readFileSync(dataFilePath, 'utf8');
     const movies = JSON.parse(jsonData).filmes;
     const movie = movies.find(movie => movie.id === parseInt(id));

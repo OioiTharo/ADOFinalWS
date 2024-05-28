@@ -65,6 +65,12 @@
       "nome": "Thais",
       "email": "thais@gt.com",
       "senha": "123"
+    },
+    {
+      "id": 12,
+      "nome": "Thais",
+      "email": "tata@gt.com",
+      "senha": "1245"
     }
   ],
   "filmes": [
